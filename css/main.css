@@ -1,32 +1,78 @@
-
-
-body {
-
-    background-image: url("../images/clock1.jpg");
-    background-size:     auto;                      /* <------ */
-    background-repeat:   no-repeat;
+body, html, main {
+  /* important */
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background-image: url('../img/background.jpg');
+      background-size:cover;
+    background-repeat: no-repeat;
     background-position: center center;
-/*    -webkit-background-size: cover !important;
-    -moz-background-size: cover !important;
-    -o-background-size: cover !important;
-    background-size: cover !important;*/ 
-    margin: 0;
-	padding: 0;
-
-};
-
-html{
-	height: 100%;
-};
-
-
-.panel-body a {
-		    word-break:break-all
-		}
-
-
-#title {
-    font-family: 'Baloo Bhai', cursive;
-    color: orange;
-    font-size: 40px;
 }
+
+*{
+  box-sizing: border-box;
+}
+
+.jumbotron{
+
+    background: rgba(0, 320, 180, .4);      
+
+    /*border:1px solid grey;*/
+
+    max-width:600px;
+    min-width:600px;
+    
+    max-height:450px;
+    min-height:450px;
+
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@font-face {
+   font-family: Raleway;
+   src: url(./Raleway-Regular.ttf);
+}
+
+@font-face{
+    font-family: Raleway-Semibold;
+   src: url(./Raleway-Semibold.ttf);
+}
+
+#title1{
+    font-family: 'Raleway', sans-serif;
+    font-size:70px;
+    color: black;
+    font-weight: bold;
+}
+
+#title2{
+    font-family: 'Raleway', sans-serif;
+    font-size:25px;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+}
+
+#subtitle{
+    font-family: 'Raleway', sans-serif;
+    font-size:22px;
+    font-weight: bold;
+    color: black;
+    margin-top:90px;
+}
+
+#login{
+    margin-top: 20px;
+    margin-bottom: 7px;
+}
+
+#skip{
+    font-family: 'Raleway-Semibold', sans-serif;
+    font-size:20px;
+    color:black;
+}
+

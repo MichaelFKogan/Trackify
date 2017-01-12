@@ -61,12 +61,19 @@ function initMapTwo() {
             lat: 40.5757706,
             lng: -74.35883439999999
         },
-        strokeColor: '#009900',
+        strokeColor: '#3399FF',
         strokeOpacity: 0,
         strokeWeight: 0,
-        fillColor: '#009900',
+        fillColor: '#3399FF',
         fillOpacity: 0.7
     });
+
+       var infowindow = new google.maps.InfoWindow({
+          content: "Job Site"
+        });
+        infowindow.setPosition({lat: 40.5757706, lng: -74.35883439999999});
+        infowindow.open(map2);
+
     //Circle 2
     var circle = new google.maps.Circle({
         map: map2,
@@ -75,12 +82,19 @@ function initMapTwo() {
             lat: 40.497557799999996,
             lng: -74.4473483
         },
-        strokeColor: '#009900',
+        strokeColor: '#3399FF',
         strokeOpacity: 0,
         strokeWeight: 0,
-        fillColor: '#009900',
+        fillColor: '#3399FF',
         fillOpacity: 0.7
     });
+
+       var infowindow = new google.maps.InfoWindow({
+          content: "Job Site"
+        });
+        infowindow.setPosition({lat: 40.497557799999996, lng: -74.4473483});
+        infowindow.open(map2);
+
     //Circle 3
     var circle = new google.maps.Circle({
         map: map2,
@@ -89,12 +103,19 @@ function initMapTwo() {
             lat: 40.534274,
             lng: -74.520258
         },
-        strokeColor: '#009900',
+        strokeColor: '#3399FF',
         strokeOpacity: 0,
         strokeWeight: 0,
-        fillColor: '#009900',
+        fillColor: '#3399FF',
         fillOpacity: 0.7
     });
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Job Site"
+        });
+        infowindow.setPosition({lat: 40.534274, lng: -74.520258});
+        infowindow.open(map2);
+
     //Circle 4
     var circle = new google.maps.Circle({
         map: map2,
@@ -103,12 +124,19 @@ function initMapTwo() {
             lat: 40.585943,
             lng: -74.619274
         },
-        strokeColor: '#009900',
+        strokeColor: '#3399FF',
         strokeOpacity: 0,
         strokeWeight: 0,
-        fillColor: '#009900',
+        fillColor: '#3399FF',
         fillOpacity: 0.7
     });
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Job Site"
+        });
+        infowindow.setPosition({lat: 40.585943, lng: -74.619274});
+        infowindow.open(map2);
+
     //Circle 5
     var circle = new google.maps.Circle({
         map: map2,
@@ -117,12 +145,19 @@ function initMapTwo() {
             lat: 40.628732,
             lng: -74.410394
         },
-        strokeColor: '#009900',
+        strokeColor: '#3399FF',
         strokeOpacity: 0,
         strokeWeight: 0,
-        fillColor: '#009900',
+        fillColor: '#3399FF',
         fillOpacity: 0.7
     });
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Job Site"
+        });
+        infowindow.setPosition({lat: 40.628732, lng: -74.410394});
+        infowindow.open(map2);
+
     //Circle 6
     var circle = new google.maps.Circle({
         map: map2,
@@ -131,12 +166,19 @@ function initMapTwo() {
             lat: 40.474823,
             lng: -74.539483
         },
-        strokeColor: '#009900',
+        strokeColor: '#3399FF',
         strokeOpacity: 0,
         strokeWeight: 0,
-        fillColor: '#009900',
+        fillColor: '#3399FF',
         fillOpacity: 0.7
     }); // End Circles
+
+        var infowindow = new google.maps.InfoWindow({
+          content: "Job Site"
+        });
+        infowindow.setPosition({lat: 40.474823, lng: -74.539483});
+        infowindow.open(map2);
+
                     
     var geocoder = new google.maps.Geocoder;
       
@@ -176,6 +218,9 @@ function geocodeLatLng(geocoder, map, infowindow) {
         
         infowindow.setContent(snapshot.val() + "<br>" + results[0].formatted_address);
         infowindow.open(map, marker);
+        marker.addListener('click', function() {
+        infowindow.open(map, marker);
+        });
         })
 
       } else {

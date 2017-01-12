@@ -1,87 +1,103 @@
-
-
-body {
-  /*background-image: url("../image/clock1.jpg");*/
-  min-height:auto;
-  -webkit-background-size:cover;
-  -moz-background-size:cover;
-  background-size:cover;
-  -o-background-size:cover;
-  background-position:center;
-  background-repeat: none;
-  background-image: url("../images/clock1.jpg");
-  color:#fff;
-};
-
-html{
-  height: 100%;
-};
-
-
-#mainNav {
-      width: 700px;
-}
-
-#saying{
-  color: orange;
-}
-
-.panel-body a {
-  word-break:break-all
-}
-
-.eyes {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  width: 200px;
-}
-
-header {
-    position: relative;
-    width: 700px;
-    height: 1024px;
-    min-height:auto;
+body, html, main {
+  /* important */
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background-image: url('../img/background.jpg');
     background-size:cover;
-    background-size:cover;
-    background-position:center;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-header{
-  min-height:auto;
-  -webkit-background-size:cover;
-  -moz-background-size:cover;
-  background-size:cover;
-  -o-background-size:cover;
-  background-position:center;
-  background-image:url('https://usersthink.com/wp-content/uploads/39-usersthink-stock-image.jpg');
-  color:#fff;
- 
+*{
+  box-sizing: border-box;
 }
 
-h1 {
-    position: relative;
-    left: 20pc;
-    top: 5pc;
-    font-size: 3pc;
+@font-face {
+   font-family: Raleway;
+   src: url(./Raleway-Regular.ttf);
 }
 
-.clockIn {
-  position: relative;
-  background: rgba(0, 255, 188, 0.5);
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  right: -7pc;
+#pageWrapper{
+  min-width:685px;
+  max-width:1000px;
+  /*background:rgba(255, 255, 255, 0.7);*/
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.clockOut {
-  position: relative;
-  background: rgba(0, 255, 188, 0.5);
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  right: -7pc;
+#home{
+  font-family:Raleway;
+  font-size: 17px;
+  color:black;
+}
+
+#borderWrapper{
+    border:3px solid black;
+    /*background:rgba(255, 255, 255, 0.6); */
+    max-width:720px;
+    min-width:685px;
+    margin-left:auto; 
+    margin-right:auto;
+    border-radius:6px;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+#clockAndButtonsWrapper{
+  min-width:680px; 
+  max-width:680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#clockWrapper{
+  max-width:525px;
+  min-width:525px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  border:1px solid #3f3f3f;
+  background:rgba(156, 156, 156, 0.4);
+  border-radius: 5px;
+}
+
+#clockDiv{
+  max-width:525px;
+  min-width:525px;
+  max-height:125px;
+  min-height:125px;
+  margin-top:40px;
+}
+
+#clockButtonsWrapper{
+  display:inline-block;
+  margin-left: 15px;
+  overflow: auto;
+}
+
+#clockIn {
+  background:rgba(156, 156, 156, 0.4);
+  border-radius: 5px;
+  color: black;
+  border:1px solid black;
+  width:115px;
+  margin-bottom: 15px;
+  margin-top:10px;
+  display:inline-block;
+}
+
+#clockOut {
+  background:rgba(156, 156, 156, 0.4);
+  border-radius: 5px;
+  color: black;
+  border:1px solid black;
+  display:inline-block;
 }
 
 
@@ -103,20 +119,50 @@ h1 {
     top: -192px;
 }
 
-.location {
-    position: relative;
-    border: 1px solid black;
-    height: 298px;
-    width: 657px;
-    left: -13pc;
-    bottom: -4pc;
+#mainWrapper{
+  min-width:680px;
+  max-width:680px;
+  height:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hours {
-    position: relative;
-    top: 7pc;
+#messageWrapper{
+    height:30px; 
+    vertical-align: center;"
+}
+
+.message{
+    padding-top:5px;
+    font-weight: bold;
+}
+
+#location {
+    background:rgba(156, 156, 156, 0.4);
     border: 1px solid black;
-    right: 31pc;
+    border-radius: 3px;
+    margin-top: 30px;
+}
+
+#mapDiv{
+    max-width:352px;
+    min-width:352px;
+    margin-right: 18px;
+    margin-left: 10px;
+    color:black;
+    font-size:40px;
+    font-family: sans-serif;
+    display:inline-block; 
+    float:left; 
+}
+
+#map2 {
+    width: 350px;
+    height: 360px;
+    overflow: auto;
+    margin-top:10px;
+    border:1px solid black;
+    border-radius: 3px;
 }
 
 #timeIn {
@@ -125,6 +171,7 @@ h1 {
     margin: 0 0 0 0;
     height: 3pc;
     top: 5pc;
+
 }
 
 #timeOut {
@@ -135,26 +182,18 @@ h1 {
     top: 6pc;
 }
 
-#map2 {
-    height: 300px;
-    width: 400px;
-    color:black;
+#timeStampWrapper{
+    display:inline-block; 
+    margin-right: auto;
+    margin-left: auto;
+    float:left; 
+    width:300px;
+    height:auto;
+    margin-right: auto;
 }
 /*========================================================Clock Stuff====================================================================*/
 
-.flip-clock-wrapper * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
 
-  }
 
 .flip-clock-wrapper a {
   cursor: pointer;
@@ -190,14 +229,6 @@ h1 {
 
 .flip-clock-meridium a { color: #313333; }
 
-/*.flip-clock-wrapper {
-  text-align: center;
-  position: relative;
-  width: 100%;
-  margin: 1em;
-  top: 3pc;
- left: -15pc;
-}*/
 
 .flip-clock-wrapper:before,
 .flip-clock-wrapper:after {
@@ -347,8 +378,11 @@ h1 {
   position: absolute;
   top: -1.5em;
   right: -86px;
-  color: white;
+  color: #3f3f3f;
   text-shadow: none; }
+
+ /* .flip-clock-divider.hours .flip-clock-label {
+  right: -88px; }*/
 
 .flip-clock-divider.minutes .flip-clock-label {
   right: -88px; }
@@ -520,22 +554,42 @@ h1 {
   animation: hide 0.5s 0.2s linear both; }
 
 .clock.flip-clock-wrapper {
-    margin: 2em;
-    position: relative;
-    left: -1pc;
-    top: 1pc;
+    margin-left: auto;
+    margin-right: auto;
+    display:inline-block;
+
+
 }
 
-.panel.panel-success {
-    position: relative;
-    background-color: transparent;
+.panel {
+    background:rgba(255, 255, 255, 0.2);
+    color:black;
     width: 279px;
-    left: 4pc;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: 35px;*/
+    /*margin-bottom: 35px;*/
+    display:inline-block;
 }
 
-.panel-success>.panel-heading {
-  color: white;
-  background: rgba(0, 255, 188, 0.5);
+.panel-default {
+    /*background:rgba(255, 255, 255, 0.3);*/
+    color:black;
+    width: 279px;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: 35px;*/
+    margin-bottom: 35px;
+    display:inline-block;
+}
+
+.panel-default>.panel-heading {
+  background:rgba(255, 255, 255, 0.6);
+  color: black;
+}
+
+.panel-body{
+  background:rgba(156, 156, 156, 0.6);
 }
 
 .flip-clock-label {
