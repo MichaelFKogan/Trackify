@@ -214,9 +214,14 @@ function geocodeLatLng(geocoder, map, infowindow) {
         });
 
         database.ref('user').on("child_added", function(snapshot){
-            name = snapshot.val();
         
-        infowindow.setContent(snapshot.val() + "<br>" + results[0].formatted_address);
+        name = snapshot.val();
+        
+        if(snapshot.val()){
+        infowindow.setContent(snapshot.val() + "<br>" + results[0].formatted_address);}
+
+        else{infowindow.setContent("Unknown User" + "<br>" + results[0].formatted_address);}
+
         infowindow.open(map, marker);
         marker.addListener('click', function() {
         infowindow.open(map, marker);
