@@ -220,12 +220,16 @@ function geocodeLatLng(geocoder, map, infowindow) {
         if(snapshot.val()){
         infowindow.setContent(snapshot.val() + "<br>" + results[0].formatted_address);}
 
-        else{infowindow.setContent("Unknown User" + "<br>" + results[0].formatted_address);}
+        else{
+        infowindow.setContent("Unknown User" + "<br>" + results[0].formatted_address);}
 
         infowindow.open(map, marker);
+                $("checkIn").on('click', function(){
         marker.addListener('click', function() {
         infowindow.open(map, marker);
         });
+        })
+
         })
 
       } else {
@@ -236,6 +240,7 @@ function geocodeLatLng(geocoder, map, infowindow) {
     }
   });
   });
+  // });
 
 } // End geocodeLatLng() function.
     
