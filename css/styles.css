@@ -206,6 +206,7 @@ body, html, main {
     height:auto;
     margin-right: auto;
 }
+
 /*========================================================Clock Stuff====================================================================*/
 
 
@@ -596,6 +597,10 @@ body, html, main {
     /*margin-top: 35px;*/
     margin-bottom: 35px;
     display:inline-block;
+}
+
+#punchoutTwo{
+  margin-bottom: 15px;
 }
 
 .panel-default>.panel-heading {

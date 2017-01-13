@@ -5,6 +5,7 @@ var clockIn;
 var clockOut;
 var totalTime;
 clockedIn = false;
+var x = 0;
 var formattedDate1;
 var formattedDate2;
 var formattedTime;
@@ -26,7 +27,7 @@ $(document).ready(function() {
     });
 
     $('.clockIn').click(function(e) {
-      if (clockedIn == false) {
+      if (clockedIn == false && x == 0) {
       clock.start();
       stamp1 = (moment()._d);
       clockIn = moment().format('X');
@@ -42,6 +43,7 @@ $(document).ready(function() {
       $('#punchin >tbody').append("<tr><td>" + stamp1 + "</td></tr>");
       $('#total').hide();
       clockedIn = true;
+      x=x+1;
       // database.ref().push({
       //            clockIn: formattedDate1,  
       //            clockOut: formattedDate2,
@@ -53,7 +55,7 @@ $(document).ready(function() {
     });
 
     $('.clockOut').click(function(e) {
-      if (clockedIn == true) {
+      if (clockedIn == true && x==1) {
       clock.stop();
       stamp2 = (moment()._d);
       clockOut = moment().format('X');
@@ -79,6 +81,7 @@ $(document).ready(function() {
       //console.log(formattedTime);
       //$('#total').show().text(formattedTime);
       clockedIn = false;
+      x=x+1;
       //may need to be added to other people's code
            		// database.ref('userInfo').set({
              //     name: name,
@@ -92,7 +95,9 @@ $(document).ready(function() {
 
 
       } else {
-        $('.message').html("You're not clocked in!");
+        if(x==0){
+        $('.message').html("You're not clocked in!");}
+        else{};
       }
     });
     

@@ -207,6 +207,8 @@ function geocodeLatLng(geocoder, map, infowindow) {
     if (status === 'OK') {
       if (results[0]) {
         map.setZoom(10);
+
+        $('#checkIn').on('click', function(){
         
         var marker = new google.maps.Marker({
           position: latlng,
@@ -216,7 +218,8 @@ function geocodeLatLng(geocoder, map, infowindow) {
         database.ref('user').on("child_added", function(snapshot){
         
         name = snapshot.val();
-        
+
+
         if(snapshot.val()){
         infowindow.setContent(snapshot.val() + "<br>" + results[0].formatted_address);}
 
@@ -224,7 +227,6 @@ function geocodeLatLng(geocoder, map, infowindow) {
         infowindow.setContent("Unknown User" + "<br>" + results[0].formatted_address);}
 
         infowindow.open(map, marker);
-                $("checkIn").on('click', function(){
         marker.addListener('click', function() {
         infowindow.open(map, marker);
         });
